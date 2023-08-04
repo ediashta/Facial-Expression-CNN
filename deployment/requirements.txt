@@ -1,0 +1,9 @@
+seaborn
+pandas
+matplotlib
+plotly
+Pillow
+scikit-learn==1.2.2
+feature_engine
+streamlit_option_menu
+tensorflow ==2.10.0
