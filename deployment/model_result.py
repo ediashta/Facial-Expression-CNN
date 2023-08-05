@@ -21,7 +21,7 @@ def report():
         progress_bar = st.sidebar.progress(0)
         status_text = st.sidebar.empty()
         last_rows = [df[data].iloc[0]]
-        chart = st.line_chart(last_rows, use_container_width=True, height=500)
+        chart = st.line_chart(last_rows, use_container_width=True, height=400)
 
         for i in range(1, len(df)):
             new_rows = [df[data].iloc[i]]
@@ -40,6 +40,13 @@ def report():
         performance_plot(data_plot)
         
     st.button("Re-run")
+    
+    st.markdown('''
+                * In this model, it can be observed that the convergence occurs before epoch 20.
+                * From epoch 40-50, the model starts to stagnate, prompting a reduction in the learning rate.
+                * However, it can be seen that the model is slightly less stable in validation before the learning rate reduction.
+                * Based on these observations, we can say that this model is still slightly underfit.
+                ''')
         
 if __name__ == "__main__":
     report()
