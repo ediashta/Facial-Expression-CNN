@@ -34,7 +34,7 @@ def predict():
         
         img_array = image.img_to_array(img)
         img_array = np.expand_dims(img_array, axis=0)
-        img_array /= 255.0  # Normalize the image
+        img_array /= (255*117)  # Normalize the image
 
         inf_pred_single = emotion_classification_model.predict(img_array)
         
